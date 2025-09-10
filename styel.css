@@ -1,11 +1,11 @@
-/* پس‌زمینه و کل سایت */
+/* ==== بدنه و کل صفحه ==== */
 body {
   margin: 0;
   min-height: 100vh;
   display: flex;
-  justify-content: center;   /* وسط افقی */
-  align-items: center;       /* وسط عمودی */
-font-family: sans-serif;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Narges', Arial, sans-serif;
   background: #e94f54;
   color: #fff;
   text-align: center;
@@ -14,18 +14,17 @@ font-family: sans-serif;
 /* جعبه اصلی */
 .center {
   background-color: #ff9a9e;
-  width: 90%;          /* درصدی برای ریسپانسیو */
-  max-width: 600px;    /* حداکثر اندازه روی دسکتاپ */
+  width: 90%;
+  max-width: 600px;
   padding: 20px;
   border-radius: 15px;
   box-sizing: border-box;
-  font-family: sans-serif;
 }
 
 /* تیتر */
 h1 {
   font-weight: 500;
-  font-family: sans-serif;
+  font-family: cursive;
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-shadow: 1px 2px #fff;
@@ -43,13 +42,12 @@ input {
   max-width: 250px;
   text-align: center;
   color: crimson;
-  font-family: sans-serif;
 }
 
 /* دکمه */
 button {
-  display: inline-block;   /* طبیعی توی صفحه */
-  margin-top: 15px;
+  display: block;
+  margin: 15px auto 0; /* بالا و پایین فاصله و وسط چین */
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   border: none;
@@ -58,18 +56,23 @@ button {
   color: #fff;
   cursor: pointer;
   transition: 0.3s;
-  font-family: sans-serif;
 }
 
-button:hover { background-color: crimson; }
-button:disabled { background-color: rgba(255,111,145,0.6); }
+button:hover {
+  background-color: crimson;
+}
+
+button:disabled {
+  background-color: rgba(255, 111, 145, 0.6);
+  cursor: not-allowed;
+}
 
 /* نتیجه */
 #result {
   margin-top: 20px;
   font-size: 1.2rem;
   padding: 15px;
-  background-color: rgba(255,255,255,0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   display: inline-block;
   opacity: 0;
@@ -77,16 +80,17 @@ button:disabled { background-color: rgba(255,111,145,0.6); }
   transition: all 0.5s ease;
   color: crimson;
 }
+
 #result.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* تصویر */
+/* تصویر اصلی */
 #img0 {
   width: 200px;
   margin: 20px auto 0;
-  display: block;  /* مرکز چین */
+  display: block;
 }
 
 /* شخصیت کارتونی */
@@ -95,4 +99,49 @@ button:disabled { background-color: rgba(255,111,145,0.6); }
   margin: 20px auto 0;
 }
 
+.mouth {
+  width: 40px;
+  height: 10px;
+  border-bottom: 4px solid black;
+  border-radius: 0 0 20px 20px;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
 
+/* حالات احساسی */
+.happy .mouth {
+  border-bottom: 4px solid black;
+  border-radius: 0 0 20px 20px;
+  transform: rotate(0deg);
+}
+
+.surprised .mouth {
+  border-bottom: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: black;
+}
+
+.funny .mouth {
+  border-bottom: 4px solid black;
+  border-radius: 0 0 20px 20px;
+  transform: rotate(20deg);
+}
+
+.sad .mouth {
+  border-bottom: 4px solid black;
+  border-radius: 20px 20px 0 0;
+  transform: rotate(0deg);
+}
+
+/* موشن پرش */
+.jump {
+  animation: jump 0.3s;
+}
+
+@keyframes jump {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
