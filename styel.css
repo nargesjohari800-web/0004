@@ -46,7 +46,7 @@ input {
 
 /* دکمه */
 button {
-  display: inline-block;
+  display: inline-block;   /* طبیعی توی صفحه */
   margin-top: 15px;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -57,6 +57,7 @@ button {
   cursor: pointer;
   transition: 0.3s;
 }
+
 button:hover { background-color: crimson; }
 button:disabled { background-color: rgba(255,111,145,0.6); }
 
@@ -90,3 +91,4 @@ button:disabled { background-color: rgba(255,111,145,0.6); }
   width: 100px;
   margin: 20px auto 0;
 }
+
